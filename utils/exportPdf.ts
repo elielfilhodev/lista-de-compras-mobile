@@ -109,7 +109,7 @@ export async function exportToPdf(items: ShoppingItem[]): Promise<void> {
     </html>
   `;
 
-  const { uri } = await Print.printToFileAsync({ html, base64: false });
+  const { uri } = await Print.printToFileAsync({ html });
 
   if (await Sharing.isAvailableAsync()) {
     await Sharing.shareAsync(uri, {
